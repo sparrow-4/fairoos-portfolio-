@@ -23,7 +23,7 @@ export const About = () => {
                 </motion.div>
             </div>
 
-            <div className="container-custom relative z-10 pt-20">
+            <div className="container-custom relative z-10 pt-20 px-6 md:px-12">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
 
                     {/* Left Column - Image Composition */}
