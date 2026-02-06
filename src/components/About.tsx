@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { profileData } from '../data/profile';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useCountUp } from '../hooks/useCountUp';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const About = () => {
     const { elementRef, isVisible } = useIntersectionObserver({ threshold: 0.2 });
@@ -95,7 +95,6 @@ export const About = () => {
                                     key={index}
                                     stat={stat}
                                     isVisible={isVisible}
-                                    delay={index * 0.1}
                                 />
                             ))}
                         </div>
@@ -124,10 +123,9 @@ export const About = () => {
 interface StatCardProps {
     stat: { label: string; value: number; suffix: string };
     isVisible: boolean;
-    delay: number;
 }
 
-const StatCard = ({ stat, isVisible, delay }: StatCardProps) => {
+const StatCard = ({ stat, isVisible }: StatCardProps) => {
     const count = useCountUp({
         end: stat.value,
         duration: 2000,
